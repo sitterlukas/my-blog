@@ -83,7 +83,9 @@ export const ProjectsSection = () => {
             </div>
           </SwiperSlide>
         </Swiper>
-        <ScrollToSection title='stack' />
+        <div className='hidden md:block'>
+          <ScrollToSection title='stack' />
+        </div>
       </div>
     </motion.div>
   );

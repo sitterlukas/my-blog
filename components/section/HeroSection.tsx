@@ -100,6 +100,8 @@ export const HeroSection = () => (
         </svg>
       </motion.div>
     </div>
-    <ScrollToSection title='projects' />
+    <div className='hidden md:block'>
+      <ScrollToSection title='projects' />
+    </div>
   </main>
 );
