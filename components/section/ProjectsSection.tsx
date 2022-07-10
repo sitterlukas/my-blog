@@ -26,7 +26,7 @@ export const ProjectsSection = () => {
     >
       <div id='projects' className='px-10 md:px-40 max-w-screen-2xl 2xl:mx-auto'>
         <h1 className='text-secondary text-6xl mb-4 text-center pt-32 mb-36 sm:mb-40 font-light'>
-          <RoughNotation show color='#004c45' padding={10} animationDelay={800} strokeWidth={1} type='underline'>Projects</RoughNotation>
+          <RoughNotation show color='#004c45' padding={10} animationDelay={1000} strokeWidth={1} type='underline'>Projects</RoughNotation>
         </h1>
         <Swiper
           color='secondary'
