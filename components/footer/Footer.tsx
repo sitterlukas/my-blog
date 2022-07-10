@@ -10,9 +10,9 @@ export const Footer = () => (
         <RoughNotation show color='#004662' animationDelay={1200} strokeWidth={2} type='underline'>Contact</RoughNotation>
       </div>
       <div className='flex flex-col gap-3'>
-        <a>Github</a>
-        <a>LinkedIn</a>
-        <a>Email</a>
+        <a href='#about'>Github</a>
+        <a href='#about'>LinkedIn</a>
+        <a href='#about'>Email</a>
       </div>
     </div>
     <div className='flex flex-col'>
@@ -20,8 +20,8 @@ export const Footer = () => (
         <RoughNotation show color='#004c45' animationDelay={1200} strokeWidth={2} type='underline'>Projects</RoughNotation>
       </div>
       <div className='flex flex-col gap-3'>
-        <a>Chat app</a>
-        <a>Calculator app</a>
+        <a href='#about'>Chat app</a>
+        <a href='#about'>Calculator app</a>
       </div>
     </div>
     <div className='flex flex-col'>
