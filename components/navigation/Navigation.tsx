@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 export const Navigation = () => (
   <motion.header
     id='home'
-    className='h-28 bg-primary flex justify-between items-center px-10 md:px-40 sticky top-0 mb-32 font-light max-w-screen-2xl 2xl:mx-auto z-10'
+    className='h-28 bg-primary flex justify-between items-center px-10 md:px-40 sticky top-0 mb-12 md:mb-32 font-light max-w-screen-2xl 2xl:mx-auto z-10'
     key='header'
     initial={{ y: -100, opacity: 0 }}
     animate={{ y: 0, opacity: 1 }}
