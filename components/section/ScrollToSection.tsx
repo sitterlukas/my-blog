@@ -10,7 +10,7 @@ export const ScrollToSection = ({ title }: {title: string}) => (
     transition={{ duration: 0.6 }}
     className='text-secondary text-center font-light hover:text-yellow_primary cursor-pointer'
   >
-    <a href='#projects'>
+    <a href={`#${title}`}>
       <h3>
         Scroll to
         {' '}

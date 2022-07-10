@@ -3,12 +3,12 @@ import { RoughNotation } from 'react-rough-notation';
 import { ScrollToSection } from './ScrollToSection';
 
 export const HeroSection = () => (
-  <main className='px-10 md:px-40 h-full md:h-vhNav flex flex-col gap-16 md:gap-32 xl:gap-48 max-w-screen-2xl 2xl:mx-auto'>
+  <main className='px-10 lg:px-40 h-full md:h-vhNav flex flex-col gap-16 md:gap-32 xl:gap-48 max-w-screen-2xl 2xl:mx-auto'>
     <div className='grid grid-cols-1 lg:grid-cols-custom gap-5 xl:gap-20'>
       <motion.div
         className='bg-primary'
         key='main-text'
-        initial={{ x: -100, opacity: 0 }}
+        initial={{ x: 100, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         exit={{ x: -100, opacity: 0 }}
         transition={{ duration: 0.8 }}

@@ -7,6 +7,7 @@ module.exports = {
     extend: {
       gridTemplateColumns: {
         custom: '1.5fr 1fr',
+        customTextLeft: '1fr 1.5fr',
       },
       colors: {
         secondary: '#f3f3f3',

@@ -17,14 +17,14 @@ export const ProjectsSection = () => {
   return (
 
     <motion.div
-      className='bg-primary mb-12 h-vhNavProjects'
+      className='bg-primary mb-12 lg:h-vhNavProjects'
       key='main-text'
       initial={{ x: -100, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
       exit={{ x: -100, opacity: 0 }}
       transition={{ duration: 0.8 }}
     >
-      <div id='projects' className='px-10 md:px-40 max-w-screen-2xl 2xl:mx-auto'>
+      <div id='projects' className='px-10 lg:px-40 max-w-screen-2xl 2xl:mx-auto'>
         <h1 className='text-secondary text-6xl mb-4 text-center pt-32 mb-36 sm:mb-40 font-light'>
           <RoughNotation show color='#004c45' padding={10} animationDelay={1000} strokeWidth={1} type='underline'>Projects</RoughNotation>
         </h1>
@@ -38,7 +38,7 @@ export const ProjectsSection = () => {
           }}
           navigation
           modules={[Pagination]}
-          className='mySwiper mb-8 h-44'
+          className='mySwiper mb-20 h-44'
         >
           <SwiperSlide className='text-secondary font-light'>
             <div className='flex flex-col h-full text-center'>

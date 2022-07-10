@@ -4,6 +4,8 @@ import { AnimatePresence } from 'framer-motion';
 import { Navigation } from '../components/navigation/Navigation';
 import { HeroSection } from '../components/section/HeroSection';
 import { ProjectsSection } from '../components/section/ProjectsSection';
+import { StackSection } from '../components/section/StackSection';
+import { Footer } from '../components/footer/Footer';
 
 const Home: NextPage = () => (
   <div>
@@ -17,6 +19,8 @@ const Home: NextPage = () => (
       <Navigation />
       <HeroSection />
       <ProjectsSection />
+      <StackSection />
+      <Footer />
     </AnimatePresence>
   </div>
 );
