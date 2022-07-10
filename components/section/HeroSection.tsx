@@ -14,7 +14,7 @@ export const HeroSection = () => (
         transition={{ duration: 0.8 }}
       >
         <h1 id='about' className='text-secondary font-light text-6xl mb-12 scroll-mt-60'>
-          <RoughNotation show color='#004c45' padding={10} animationDelay={800} strokeWidth={1} type='circle'>About me</RoughNotation>
+          <RoughNotation show color='#004c45' padding={10} animationDelay={1000} strokeWidth={1} type='circle'>About me</RoughNotation>
         </h1>
         <div className='flex flex-col gap-3 text-1xl text-secondary leading-6 mb-8 font-light'>
           <span>
@@ -50,7 +50,7 @@ export const HeroSection = () => (
           <span>
             If you like my work please contact me on
             {' '}
-            <RoughNotation show color='#004662' animationDelay={800} type='highlight'>LinkedIn</RoughNotation>
+            <RoughNotation show color='#004662' animationDelay={1000} type='highlight'>LinkedIn</RoughNotation>
           </span>
         </div>
         <div className='text-secondary text-center flex gap-8 font-light'>
