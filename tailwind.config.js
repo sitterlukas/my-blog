@@ -21,6 +21,7 @@ module.exports = {
       },
       height: {
         vhNav: 'calc(100vh - 15rem)',
+        vhNavProjects: 'calc(100vh - 5rem)',
       },
     },
   },

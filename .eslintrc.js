@@ -25,8 +25,12 @@ module.exports = {
     'react/function-component-definition': 'off',
     'react/jsx-filename-extension': 'off',
     'max-len': 'off',
+    'import/extensions': 'off',
+    'import/no-unresolved': 'off',
     'jsx-quotes': [2, 'prefer-single'],
     'react/no-unescaped-entities': 'off',
+    'import/prefer-default-export': 'off',
+    'no-undef': 'off',
     '@typescript-eslint/quotes': [
       'error',
       'single',
