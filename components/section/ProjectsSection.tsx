@@ -10,12 +10,10 @@ import 'swiper/css/pagination';
 import { ScrollToSection } from './ScrollToSection';
 
 export const ProjectsSection = () => {
-  const [mobile, setIsMobile] = useState(false);
-  useEffect(() => () => {
-    if (typeof window !== 'undefined' && window.innerWidth <= 700) {
-      setIsMobile(true);
-    }
-  }, []);
+  const [width, setWidth] = useState(0);
+  useEffect(() => {
+    setWidth(window.innerWidth);
+  });
   return (
 
     <motion.div
@@ -32,7 +30,7 @@ export const ProjectsSection = () => {
         </h1>
         <Swiper
           color='secondary'
-          slidesPerView={!mobile ? 3 : 1}
+          slidesPerView={width > 700 ? 3 : 1}
           spaceBetween={30}
           loop
           pagination={{

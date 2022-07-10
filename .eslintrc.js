@@ -30,6 +30,7 @@ module.exports = {
     'jsx-quotes': [2, 'prefer-single'],
     'react/no-unescaped-entities': 'off',
     'import/prefer-default-export': 'off',
+    'consistent-return': 'off',
     'no-undef': 'off',
     '@typescript-eslint/quotes': [
       'error',
