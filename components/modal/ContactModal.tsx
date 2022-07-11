@@ -13,7 +13,7 @@ export const ContactModal = ({ isOpen, handleModalOpen }: ContactModalProps) => 
     tel: 0,
     message: ''
   });
-  const handleChange = (event: React.FormEvent<HTMLInputElement> | React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+  const handleChange = (event: React.FormEvent<HTMLInputElement>) => {
     const { name } = event.target as HTMLInputElement;
     const { value } = event.target as HTMLInputElement;
     setInputs((values) => ({ ...values, [name]: value }));
