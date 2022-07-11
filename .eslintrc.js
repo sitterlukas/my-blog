@@ -32,10 +32,13 @@ module.exports = {
     'import/prefer-default-export': 'off',
     'consistent-return': 'off',
     'no-undef': 'off',
+    'prefer-destructuring': 'off',
     'react/no-array-index-key': 'off',
     'jsx-a11y/click-events-have-key-events': 'off',
     'jsx-a11y/no-static-element-interactions': 'off',
     'jsx-a11y/label-has-associated-control': 'off',
+    '(prefer-destructuring': 'off',
+    'comma-dangle': 'off',
     '@typescript-eslint/quotes': [
       'error',
       'single',

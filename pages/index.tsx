@@ -12,7 +12,7 @@ import { ContactModal } from '../components/modal/ContactModal';
 
 const Home: NextPage = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  const handleModalOpen = () => {
+  const handleModalOpen = (): void => {
     setModalIsOpen(!modalIsOpen);
   };
   useEffect(() => {
