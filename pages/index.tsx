@@ -32,7 +32,7 @@ const Home: NextPage = () => {
 
       <AnimatePresence>
         <Navigation handleModalOpen={handleModalOpen} />
-        <ContactModal isOpen={modalIsOpen} handleModalOpen={handleModalOpen} />
+        <ContactModal isOpen={modalIsOpen} handleModalOpen={handleModalOpen} setModalIsOpen={setModalIsOpen} />
         <HeroSection />
         <ProjectsSection />
         <StackSection />

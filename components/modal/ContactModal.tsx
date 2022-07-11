@@ -2,7 +2,7 @@ import React, { MouseEventHandler, useState } from 'react';
 import { motion } from 'framer-motion';
 import { RoughNotation } from 'react-rough-notation';
 
-export const ContactModal = ({ isOpen, handleModalOpen }: {isOpen: boolean, handleModalOpen: MouseEventHandler<HTMLDivElement>}) => {
+export const ContactModal = ({ isOpen, handleModalOpen, setModalIsOpen }: {isOpen: boolean, handleModalOpen: MouseEventHandler<HTMLDivElement>, setModalIsOpen: Function}) => {
   const [inputs, setInputs] = useState({
     email: '',
     tel: 0,
@@ -24,7 +24,7 @@ export const ContactModal = ({ isOpen, handleModalOpen }: {isOpen: boolean, hand
     const resJson = await res;
     if (res.status === 200) {
       console.log(resJson);
-      handleModalOpen(event);
+      setModalIsOpen(false);
     } else {
       alert('Some error occured');
     }
@@ -38,16 +38,16 @@ export const ContactModal = ({ isOpen, handleModalOpen }: {isOpen: boolean, hand
         <h1 className='mb-12 text-center px-12 text-6xl text-secondary font-light'>
           <RoughNotation color='#8b6f00' show={isOpen} strokeWidth={1} type='underline'>Contact me</RoughNotation>
         </h1>
-        <form onSubmit={handleSubmit} className='flex flex-col gap-6 items-start px-4 px-8 md:px-20 text-left text-secondary'>
-          <div className='flex flex-col w-40 md-w-60'>
+        <form onSubmit={handleSubmit} className='flex flex-col gap-6 items-start px-8 md:px-20 text-left text-secondary'>
+          <div className='flex flex-col w-52 md-w-60'>
             <label className='mb-2'>Email:</label>
             <input required value={inputs.email || ''} onChange={handleChange} id='email' name='email' type='email' className='h-8 px-2 text-secondary bg-primary border-b-2 border-secondary focus:outline-none' />
           </div>
-          <div className='flex flex-col w-40 md-w-60'>
+          <div className='flex flex-col w-52 md-w-60'>
             <label className='mb-2'>Tel:</label>
             <input required value={inputs.tel || ''} onChange={handleChange} id='tel' name='tel' type='tel' className='h-8 px-2 text-secondary bg-primary border-b-2 border-secondary focus:outline-none' />
           </div>
-          <div className='flex flex-col w-40 md-w-60 mb-4'>
+          <div className='flex flex-col w-52 md-w-60 mb-4'>
             <label className='mb-2'>Message:</label>
             <input required value={inputs.message || ''} onChange={handleChange} id='message' name='message' type='text' className='h-8 px-2 text-secondary bg-primary border-b-2 border-secondary focus:outline-none' />
           </div>
