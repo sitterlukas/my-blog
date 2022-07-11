@@ -24,13 +24,15 @@ export const ContactModal = ({ isOpen, handleModalOpen }: {isOpen: boolean, hand
           <label className='mb-2'>Message:</label>
           <input id='message' name='message' type='text' className='h-8 px-2 text-secondary bg-primary border-b-2 border-secondary focus:outline-none' />
         </div>
-        <button
+        <motion.button
           type='submit'
           className='w-44 py-4 bg-primary border rounded-2xl text-1xl cursor-pointer hover:border-yellow_primary
               hover:text-green_primary'
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ rotate: 10 }}
         >
           Send
-        </button>
+        </motion.button>
       </form>
     </div>
   </>
