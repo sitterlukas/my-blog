@@ -1,33 +1,31 @@
 import { RoughNotation } from 'react-rough-notation';
 
+import { footerData } from './footerData';
+
+type Data = {
+    title: string;
+    color: string;
+    links: {
+        title: string,
+        href: string
+    }[];
+}
+
 export const Footer = () => (
-  <footer className='flex justify-around text-left text-secondary font-light mb-8'>
-    <a className='text-xl mb-4' href='#about'>
+  <footer className='flex justify-around mb-8 text-center text-secondary font-light'>
+    <a className='mb-4 text-xl' href='#about'>
       <RoughNotation show color='#580044' animationDelay={1200} strokeWidth={2} type='underline'>Home</RoughNotation>
     </a>
-    <div className='flex flex-col'>
-      <div className='text-xl mb-4'>
-        <RoughNotation show color='#004662' animationDelay={1200} strokeWidth={2} type='underline'>Contact</RoughNotation>
+    {footerData.map((link: Data, index) => (
+      <div key={index} className='flex flex-col'>
+        <div className='mb-4 text-xl'>
+          <RoughNotation show color={link.color} animationDelay={1200} strokeWidth={2} type='underline'>{link.title}</RoughNotation>
+        </div>
+        <div className='flex flex-col gap-3 text-sm'>
+          {link.links.map((item, itemIndex) => <a key={itemIndex} href={item.href}>{item.title}</a>)}
+        </div>
       </div>
-      <div className='flex flex-col gap-3'>
-        <a href='#about'>Github</a>
-        <a href='#about'>LinkedIn</a>
-        <a href='#about'>Email</a>
-      </div>
-    </div>
-    <div className='flex flex-col'>
-      <div className='text-xl mb-4'>
-        <RoughNotation show color='#004c45' animationDelay={1200} strokeWidth={2} type='underline'>Projects</RoughNotation>
-      </div>
-      <div className='flex flex-col gap-3'>
-        <a href='#about'>Chat app</a>
-        <a href='#about'>Calculator app</a>
-      </div>
-    </div>
-    <div className='flex flex-col'>
-      <div className='text-xl mb-4'>
-        <RoughNotation show color='#8b6f00' animationDelay={1200} strokeWidth={2} type='underline'>:)</RoughNotation>
-      </div>
-    </div>
+    ))}
+
   </footer>
 );

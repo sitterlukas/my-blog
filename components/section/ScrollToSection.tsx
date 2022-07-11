@@ -3,7 +3,6 @@ import { BsChevronDoubleDown } from 'react-icons/bs';
 
 export const ScrollToSection = ({ title }: {title: string}) => (
   <motion.div
-    key={`scroll-to-${title}`}
     initial={{ y: 300, opacity: 0 }}
     animate={{ y: 0, opacity: 1 }}
     exit={{ y: -100, opacity: 0 }}

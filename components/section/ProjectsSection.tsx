@@ -2,12 +2,13 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { RoughNotation } from 'react-rough-notation';
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
-
 import { Pagination } from 'swiper';
+
+import { ScrollToSection } from './ScrollToSection';
+import { projectSectionData } from './projectsSectionData';
 
 import 'swiper/css';
 import 'swiper/css/pagination';
-import { ScrollToSection } from './ScrollToSection';
 
 export const ProjectsSection = () => {
   const [width, setWidth] = useState(0);
@@ -18,7 +19,7 @@ export const ProjectsSection = () => {
 
     <motion.div
       className='bg-primary mb-12 lg:h-vhNavProjects'
-      key='main-text'
+      key='project-section-text'
       initial={{ x: -100, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
       exit={{ x: -100, opacity: 0 }}
@@ -40,48 +41,23 @@ export const ProjectsSection = () => {
           modules={[Pagination]}
           className='mySwiper mb-20 h-44'
         >
-          <SwiperSlide className='text-secondary font-light'>
-            <div className='flex flex-col h-full text-center'>
-              <h1 className='mb-4 text-3xl'>Chat</h1>
-              <span className='text-sm leading-6 mb-12'>App that is using next.js and socket.io. App that is using next.js and socket.io. App that is using next.js and socket.io.</span>
-              <motion.a
-                className='w-44 py-4 mx-auto text-1xl bg-primary border rounded-2xl cursor-pointer hover:border-green_primary
+          {projectSectionData.map((item, index) => (
+            <SwiperSlide key={index} className='text-secondary font-light'>
+              <div className='flex flex-col h-full text-center'>
+                <h1 className='mb-4 text-3xl'>{item.title}</h1>
+                <span className='text-sm leading-6 mb-12'>{item.text}</span>
+                <motion.a
+                  className='w-44 py-4 mx-auto text-1xl bg-primary border rounded-2xl cursor-pointer hover:border-green_primary
               hover:text-yellow_primary'
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ rotate: 10 }}
-              >
-                Visit
-              </motion.a>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide className='text-secondary font-light'>
-            <div className='flex flex-col min-h-32 text-center'>
-              <h1 className='mb-4 text-3xl'>Chat</h1>
-              <span className='text-sm leading-6 mb-12'>App that is using next.js and socket.io. App that is using next.js and socket.io. App that is using next.js and socket.io.</span>
-              <motion.a
-                className='w-44 py-4 text-1xl mx-auto bg-primary border rounded-2xl cursor-pointer hover:border-green_primary
-              hover:text-yellow_primary'
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ rotate: 10 }}
-              >
-                Visit
-              </motion.a>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide className='text-secondary font-light'>
-            <div className='flex flex-col text-center'>
-              <h1 className='mb-4 text-3xl'>Chat</h1>
-              <span className='text-sm leading-6 mb-12'>App that is using next.js and socket.io. App that is using next.js and socket.io. App that is using next.js and socket.io.</span>
-              <motion.a
-                className='w-44 py-4 mx-auto bg-primary border rounded-2xl cursor-pointer hover:border-green_primary
-              hover:text-yellow_primary'
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ rotate: 10 }}
-              >
-                Visit
-              </motion.a>
-            </div>
-          </SwiperSlide>
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ rotate: 10 }}
+                >
+                  {item.buttonTitle}
+                </motion.a>
+              </div>
+            </SwiperSlide>
+          ))}
+
         </Swiper>
         <div className='hidden md:block'>
           <ScrollToSection title='stack' />

@@ -13,6 +13,7 @@ body {
   sans-serif;
   background-color: #0c0c0c;
   scroll-behavior: smooth;
+  position: relative;
 }
 
 

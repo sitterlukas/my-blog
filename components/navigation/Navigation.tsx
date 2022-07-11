@@ -1,9 +1,12 @@
 import { motion } from 'framer-motion';
+import { MouseEventHandler } from 'react';
 
-export const Navigation = () => (
+import { navigationData } from './navigationData';
+
+export const Navigation = ({ handleModalOpen }: {handleModalOpen: MouseEventHandler<HTMLAnchorElement>}) => (
   <motion.header
     id='home'
-    className='h-28 bg-primary flex justify-between items-center px-10 lg:px-40 sticky top-0 mb-12 md:mb-32 font-light max-w-screen-2xl 2xl:mx-auto z-10'
+    className='flex sticky justify-between items-center h-28 bg-primary px-10 lg:px-40 top-0 mb-12 md:mb-32  max-w-screen-2xl 2xl:mx-auto font-light z-10'
     key='header'
     initial={{ y: -300, opacity: 0 }}
     animate={{ y: 0, opacity: 1 }}
@@ -12,10 +15,8 @@ export const Navigation = () => (
   >
     <a href='#about' className='text-3xl text-secondary cursor-pointer'>HOME</a>
     <div className='hidden lg:flex gap-16 md'>
-      <a href='#about' className='text-1xl text-secondary cursor-pointer hover:underline hover:underline-offset-8 hover:text-yellow_primary'>About</a>
-      <a href='#projects' className='text-1xl text-secondary cursor-pointer hover:underline hover:underline-offset-8 hover:text-yellow_primary'>Projects</a>
-      <a href='#stack' className='text-1xl text-secondary cursor-pointer hover:underline hover:underline-offset-8 hover:text-yellow_primary'>Stack</a>
+      {navigationData.map((link, index) => <a key={index} href={link.href} className='text-1xl text-secondary cursor-pointer hover:underline hover:underline-offset-8 hover:text-yellow_primary'>{link.title}</a>)}
     </div>
-    <a href='#work' className='text-1xl text-neutral-100 cursor-pointer underline underline-offset-8 hover:text-yellow_primary'>Let's work together</a>
+    <a onClick={handleModalOpen} href='#work' className='text-1xl text-secondary cursor-pointer underline underline-offset-8 hover:text-yellow_primary'>Let's work together</a>
   </motion.header>
 );

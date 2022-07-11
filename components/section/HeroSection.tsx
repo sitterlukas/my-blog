@@ -3,7 +3,7 @@ import { RoughNotation } from 'react-rough-notation';
 import { ScrollToSection } from './ScrollToSection';
 
 export const HeroSection = () => (
-  <main className='px-10 lg:px-40 h-full md:h-vhNav flex flex-col gap-16 md:gap-32 xl:gap-48 max-w-screen-2xl 2xl:mx-auto'>
+  <main className='flex flex-col h-full md:h-vhNav max-w-screen-2xl px-10 lg:px-40 gap-16 md:gap-32 xl:gap-48 2xl:mx-auto'>
     <div className='grid grid-cols-1 lg:grid-cols-custom gap-5 xl:gap-20'>
       <motion.div
         className='bg-primary'
@@ -13,10 +13,10 @@ export const HeroSection = () => (
         exit={{ x: -100, opacity: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <h1 id='about' className='text-secondary font-light text-6xl mb-12 scroll-mt-60'>
+        <h1 id='about' className='mb-12 text-6xl text-secondary font-light scroll-mt-60'>
           <RoughNotation show color='#004c45' padding={10} animationDelay={1000} strokeWidth={1} type='circle'>About me</RoughNotation>
         </h1>
-        <div className='flex flex-col gap-3 text-1xl text-secondary leading-6 mb-8 font-light'>
+        <div className='flex flex-col gap-3 mb-8 text-1xl text-secondary font-light leading-6'>
           <span>
             Hello my name is
             {' '}
@@ -53,9 +53,9 @@ export const HeroSection = () => (
             <RoughNotation show color='#004662' animationDelay={1000} type='highlight'>LinkedIn</RoughNotation>
           </span>
         </div>
-        <div className='text-secondary text-center flex gap-8 font-light'>
+        <div className='flex gap-8 text-center text-secondary  font-light'>
           <motion.a
-            className='w-44 py-4 text-1xl bg-primary border rounded-2xl cursor-pointer hover:border-green_primary
+            className='w-44 py-4 bg-primary border rounded-2xl text-1xl cursor-pointer hover:border-green_primary
               hover:text-yellow_primary'
             whileHover={{ scale: 1.1 }}
             whileTap={{ rotate: 10 }}
@@ -63,7 +63,7 @@ export const HeroSection = () => (
             LinkedIn
           </motion.a>
           <motion.a
-            className='w-44 py-4 text-1xl bg-primary border  rounded-2xl cursor-pointer hover:border-yellow_primary
+            className='w-44 py-4 bg-primary border rounded-2xl text-1xl cursor-pointer hover:border-yellow_primary
               hover:text-green_primary'
             whileHover={{ scale: 1.1 }}
             whileTap={{ rotate: 10 }}
@@ -73,8 +73,8 @@ export const HeroSection = () => (
         </div>
       </motion.div>
       <motion.div
-        className='bg-primary hidden lg:block relative'
-        key='main-text'
+        className='relative hidden lg:block bg-primary'
+        key='line-abstract'
         initial={{ x: 100, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         exit={{ x: -100, opacity: 0 }}

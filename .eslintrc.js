@@ -32,6 +32,7 @@ module.exports = {
     'import/prefer-default-export': 'off',
     'consistent-return': 'off',
     'no-undef': 'off',
+    'react/no-array-index-key': 'off',
     '@typescript-eslint/quotes': [
       'error',
       'single',
