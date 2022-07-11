@@ -2,7 +2,12 @@ import React, { MouseEventHandler, useState } from 'react';
 import { motion } from 'framer-motion';
 import { RoughNotation } from 'react-rough-notation';
 
-export const ContactModal = ({ isOpen, handleModalOpen, setModalIsOpen }: {isOpen: boolean, handleModalOpen: MouseEventHandler<HTMLDivElement>, setModalIsOpen: Function}) => {
+type ContactModalProps = {
+  isOpen: boolean,
+  handleModalOpen: MouseEventHandler<HTMLDivElement>
+}
+
+export const ContactModal = ({ isOpen, handleModalOpen }: ContactModalProps) => {
   const [inputs, setInputs] = useState({
     email: '',
     tel: 0,
@@ -24,7 +29,7 @@ export const ContactModal = ({ isOpen, handleModalOpen, setModalIsOpen }: {isOpe
     const resJson = await res;
     if (res.status === 200) {
       console.log(resJson);
-      setModalIsOpen(false);
+      handleModalOpen(event);
     } else {
       alert('Some error occured');
     }
