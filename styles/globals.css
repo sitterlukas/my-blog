@@ -16,6 +16,9 @@ body {
   position: relative;
 }
 
+input {
+  -webkit-appearance: none;
+}
 
 a {
   color: inherit;
