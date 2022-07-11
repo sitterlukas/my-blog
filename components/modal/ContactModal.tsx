@@ -13,12 +13,12 @@ export const ContactModal = ({ isOpen, handleModalOpen }: ContactModalProps) => 
     tel: 0,
     message: ''
   });
-  const handleChange = (event: React.FormEvent<HTMLInputElement>) => {
+  const handleChange = (event: React.FormEvent<HTMLInputElement> | React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     const { name } = event.target as HTMLInputElement;
     const { value } = event.target as HTMLInputElement;
     setInputs((values) => ({ ...values, [name]: value }));
   };
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: any) => {
     event.preventDefault();
     const res = await fetch('https://hook.eu1.make.com/51i28g03gtpttp6y6wir6coq4b7z8bng', {
       method: 'POST',

@@ -12,7 +12,7 @@ import { ContactModal } from '../components/modal/ContactModal';
 
 const Home: NextPage = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  const handleModalOpen: Function = (): void => {
+  const handleModalOpen = (): void => {
     setModalIsOpen(!modalIsOpen);
   };
   useEffect(() => {
@@ -32,7 +32,7 @@ const Home: NextPage = () => {
 
       <AnimatePresence>
         <Navigation handleModalOpen={handleModalOpen} />
-        <ContactModal isOpen={modalIsOpen} handleModalOpen={handleModalOpen} setModalIsOpen={setModalIsOpen} />
+        <ContactModal isOpen={modalIsOpen} handleModalOpen={handleModalOpen} />
         <HeroSection />
         <ProjectsSection />
         <StackSection />
