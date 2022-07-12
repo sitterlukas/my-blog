@@ -1,7 +1,7 @@
+import { useState, useEffect, FunctionComponent } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { RoughNotation } from 'react-rough-notation';
 import { motion } from 'framer-motion';
-import { useState, useEffect } from 'react';
 import { Pagination } from 'swiper';
 
 import { ScrollToSection } from './ScrollToSection';
@@ -10,7 +10,7 @@ import { projectSectionData } from './projectsSectionData';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
-export const ProjectsSection = () => {
+export const ProjectsSection: FunctionComponent = () => {
   const [width, setWidth] = useState(0);
   useEffect(() => {
     setWidth(window.innerWidth);

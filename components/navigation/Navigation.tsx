@@ -1,9 +1,13 @@
 import { motion } from 'framer-motion';
-import { MouseEventHandler } from 'react';
+import { FunctionComponent, MouseEventHandler } from 'react';
 
 import { navigationData } from './navigationData';
 
-export const Navigation = ({ handleModalOpen }: {handleModalOpen: MouseEventHandler<HTMLAnchorElement>}) => (
+type NavigationProps = {
+  handleModalOpen: MouseEventHandler<HTMLAnchorElement>
+}
+
+export const Navigation: FunctionComponent<NavigationProps> = ({ handleModalOpen }) => (
   <motion.header
     id='home'
     className='flex sticky justify-between items-center h-28 bg-primary px-10 lg:px-40 top-0 mb-12 md:mb-32  max-w-screen-2xl 2xl:mx-auto font-light z-10'

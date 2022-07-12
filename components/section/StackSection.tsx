@@ -1,9 +1,10 @@
+import { FunctionComponent } from 'react';
 import { motion } from 'framer-motion';
 import { RoughNotation } from 'react-rough-notation';
 
 import { stackSectionData } from './stackSectionData';
 
-export const StackSection = () => (
+export const StackSection: FunctionComponent = () => (
   <motion.div
     className='h-vhNavProjects mb-28  bg-primary'
     initial={{ x: -100, opacity: 0 }}

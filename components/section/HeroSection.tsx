@@ -1,8 +1,10 @@
 import { motion } from 'framer-motion';
 import { RoughNotation } from 'react-rough-notation';
+import { FunctionComponent } from 'react';
+
 import { ScrollToSection } from './ScrollToSection';
 
-export const HeroSection = () => (
+export const HeroSection:FunctionComponent = () => (
   <main className='flex flex-col h-full md:h-vhNav max-w-screen-2xl px-10 lg:px-40 gap-16 md:gap-32 xl:gap-48 2xl:mx-auto'>
     <div className='grid grid-cols-1 lg:grid-cols-custom gap-5 xl:gap-20'>
       <motion.div

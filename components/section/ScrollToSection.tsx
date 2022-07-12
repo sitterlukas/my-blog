@@ -1,7 +1,12 @@
 import { motion } from 'framer-motion';
 import { BsChevronDoubleDown } from 'react-icons/bs';
+import { FunctionComponent } from 'react';
 
-export const ScrollToSection = ({ title }: {title: string}) => (
+type ScrollToSectionProps = {
+  title: string
+}
+
+export const ScrollToSection: FunctionComponent<ScrollToSectionProps> = ({ title }) => (
   <motion.div
     initial={{ y: 300, opacity: 0 }}
     animate={{ y: 0, opacity: 1 }}

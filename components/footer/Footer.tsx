@@ -1,4 +1,5 @@
 import { RoughNotation } from 'react-rough-notation';
+import { FunctionComponent } from 'react';
 
 import { footerData } from './footerData';
 
@@ -11,7 +12,7 @@ type Data = {
     }[];
 }
 
-export const Footer = () => (
+export const Footer: FunctionComponent = () => (
   <footer className='flex justify-around mb-8 text-center text-secondary font-light'>
     <a className='mb-4 text-xl' href='#about'>
       <RoughNotation show color='#580044' animationDelay={1200} strokeWidth={2} type='underline'>Home</RoughNotation>

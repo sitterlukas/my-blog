@@ -1,4 +1,4 @@
-import React, { MouseEventHandler, useState } from 'react';
+import React, { FunctionComponent, MouseEventHandler, useState } from 'react';
 import { motion } from 'framer-motion';
 import { RoughNotation } from 'react-rough-notation';
 
@@ -7,33 +7,40 @@ type ContactModalProps = {
   handleModalOpen: MouseEventHandler<HTMLDivElement>
 }
 
-export const ContactModal = ({ isOpen, handleModalOpen }: ContactModalProps) => {
+export const ContactModal: FunctionComponent<ContactModalProps> = ({ isOpen, handleModalOpen }) => {
   const [inputs, setInputs] = useState({
     email: '',
     tel: 0,
     message: ''
   });
+
   const handleChange = (event: React.FormEvent<HTMLInputElement>) => {
     const { name } = event.target as HTMLInputElement;
     const { value } = event.target as HTMLInputElement;
     setInputs((values) => ({ ...values, [name]: value }));
   };
+
   const handleSubmit = async (event: any) => {
-    event.preventDefault();
-    const res = await fetch('https://hook.eu1.make.com/51i28g03gtpttp6y6wir6coq4b7z8bng', {
-      method: 'POST',
-      body: JSON.stringify(
-        inputs
-      ),
-    });
-    const resJson = await res;
-    if (res.status === 200) {
-      console.log(resJson);
-      handleModalOpen(event);
-    } else {
-      alert('Some error occured');
+    try {
+      event.preventDefault();
+      const res = await fetch('https://hook.eu1.make.com/51i28g03gtpttp6y6wir6coq4b7z8bng', {
+        method: 'POST',
+        body: JSON.stringify(
+          inputs
+        ),
+      });
+      const resJson = await res;
+      if (res.status === 200) {
+        console.log(resJson);
+        handleModalOpen(event);
+      } else {
+        console.log('Some error occured');
+      }
+    } catch (err) {
+      console.log(err);
     }
   };
+
   return (
     <div>
       <div onClick={handleModalOpen} className={isOpen ? 'fixed top-0 w-full h-full bg-secondary/10 overflow-auto z-30 ' : 'hidden'} />
