@@ -15,6 +15,7 @@ const Home: NextPage = () => {
   const handleModalOpen = (): void => {
     setModalIsOpen(!modalIsOpen);
   };
+
   useEffect(() => {
     if (modalIsOpen) {
       document.body.style.overflow = 'hidden';
@@ -22,6 +23,17 @@ const Home: NextPage = () => {
       document.body.style.overflow = 'auto';
     }
   }, [modalIsOpen]);
+
+  useEffect(() => {
+    const close = (e: { keyCode: number; }) => {
+      if (e.keyCode === 27 && modalIsOpen) {
+        handleModalOpen();
+      }
+    };
+    window.addEventListener('keydown', close);
+    return () => window.removeEventListener('keydown', close);
+  }, [modalIsOpen]);
+
   return (
     <div>
       <Head>

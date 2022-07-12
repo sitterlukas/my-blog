@@ -1,4 +1,6 @@
-import React, { FunctionComponent, MouseEventHandler, useState } from 'react';
+import React, {
+  FunctionComponent, MouseEventHandler, useState, useEffect
+} from 'react';
 import { motion } from 'framer-motion';
 import { RoughNotation } from 'react-rough-notation';
 
