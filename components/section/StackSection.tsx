@@ -6,7 +6,7 @@ import { stackSectionData } from './stackSectionData';
 
 export const StackSection: FunctionComponent = () => (
   <motion.div
-    className='h-vhNavProjects mb-28  bg-primary'
+    className='h-fit lg:h-vhNavProjects mb-36  bg-primary'
     initial={{ x: -100, opacity: 0 }}
     animate={{ x: 0, opacity: 1 }}
     exit={{ x: -100, opacity: 0 }}
